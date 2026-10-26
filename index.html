@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仲展行銷流通有限公司 ‧ 公部門大宗物資標案輔導專家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161a1f;
+    --paper:#f5f6f4;
+    --paper-dim:#eceeea;
+    --navy:#132339;
+    --navy-2:#1d3453;
+    --steel:#5b7085;
+    --steel-soft:#8fa0ae;
+    --seal:#9c3b2e;
+    --seal-soft:#c96a52;
+    --gold:#a9812f;
+    --line: rgba(19,35,57,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{ font-family:"Noto Serif TC","Georgia",serif; letter-spacing:0.02em; }
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  /* -------- top nav -------- */
+  .topnav{
+    position:sticky; top:0; z-index:60; background:rgba(19,35,57,0.96);
+    backdrop-filter:blur(6px); color:#fff;
+  }
+  .topnav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:"Noto Serif TC",serif; font-weight:700; font-size:17px; letter-spacing:0.04em; text-decoration:none; color:#fff; }
+  .brand .mark{ width:26px; height:26px; }
+  .topnav nav{ display:flex; gap:30px; }
+  .topnav nav a{ color:rgba(255,255,255,0.68); text-decoration:none; font-size:13.5px; letter-spacing:0.04em; transition:color .2s; }
+  .topnav nav a:hover{ color:#fff; }
+  .topnav .cta-mini{
+    border:1px solid rgba(255,255,255,0.3); padding:8px 18px; font-size:13px; text-decoration:none;
+    color:#fff; letter-spacing:0.04em; white-space:nowrap;
+  }
+  .topnav .cta-mini:hover{ background:var(--seal); border-color:var(--seal); }
+  @media (max-width:840px){ .topnav nav{ display:none; } }
+
+  /* -------- hero -------- */
+  .hero{ background:var(--navy); color:#fff; position:relative; overflow:hidden; padding:110px 0 100px; }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse at 75% 25%, black, transparent 70%);
+  }
+  .hero-inner{ position:relative; display:flex; gap:64px; align-items:center; flex-wrap:wrap; }
+  .hero-text{ flex:1 1 480px; min-width:280px; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:0.28em; color:var(--steel-soft); margin-bottom:28px; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--seal-soft); }
+  .hero h1{ font-size:clamp(32px,4.2vw,50px); font-weight:900; line-height:1.4; margin-bottom:22px; }
+  .hero h1 em{ font-style:normal; color:var(--seal-soft); }
+  .hero p.lead{ font-size:16px; color:rgba(255,255,255,0.72); max-width:520px; margin-bottom:36px; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;}
+  .pill{ border:1px solid rgba(255,255,255,0.2); padding:9px 16px; font-size:13px; color:rgba(255,255,255,0.85); border-radius:99px; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-primary{ background:var(--seal); color:#fff; text-decoration:none; padding:15px 32px; font-size:14.5px; font-weight:700; letter-spacing:0.03em; }
+  .btn-primary:hover{ background:var(--seal-soft); }
+  .btn-ghost{ border:1px solid rgba(255,255,255,0.3); color:#fff; text-decoration:none; padding:15px 32px; font-size:14.5px; letter-spacing:0.03em; }
+  .btn-ghost:hover{ border-color:#fff; }
+
+  .seal-wrap{ flex:0 0 auto; width:210px; height:210px; position:relative; }
+  .seal{ width:100%; height:100%; }
+  .seal-ring{ animation:spin 34s linear infinite; transform-origin:110px 110px; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion:reduce){ .seal-ring{ animation:none; } }
+
+  /* stat bar under hero */
+  .statbar{ background:var(--navy-2); border-top:1px solid rgba(255,255,255,0.08); }
+  .statbar .wrap{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.08); }
+  @media (max-width:760px){ .statbar .wrap{ grid-template-columns:repeat(2,1fr); padding:0; } }
+  .stat-cell{ background:var(--navy-2); padding:26px 32px; }
+  .stat-cell .n{ font-family:"Noto Serif TC",serif; font-weight:900; font-size:30px; color:var(--seal-soft); }
+  .stat-cell .l{ font-size:12.5px; color:rgba(255,255,255,0.55); margin-top:4px; letter-spacing:0.03em; }
+
+  /* -------- sections -------- */
+  section{ padding:96px 0; border-bottom:1px solid var(--line); }
+  @media (max-width:640px){ section{ padding:60px 0; } }
+  .kicker{ display:flex; align-items:baseline; gap:14px; margin-bottom:16px; }
+  .kicker .no{ font-family:"Noto Serif TC",serif; font-weight:700; color:var(--seal); font-size:13px; letter-spacing:0.14em; }
+  .kicker .rule{ flex:1; height:1px; background:var(--line); }
+  h2.title{ font-size:clamp(24px,3vw,32px); font-weight:700; margin-bottom:16px; }
+  .sub{ color:var(--steel); font-size:15px; max-width:640px; }
+  .head-row{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px; }
+
+  /* about */
+  .about-grid{ display:flex; gap:56px; flex-wrap:wrap; align-items:flex-start; }
+  .about-grid .lead-col{ flex:1 1 380px; }
+  .about-grid .lead-col p{ font-size:18px; line-height:1.9; }
+  .value-list{ flex:1 1 320px; display:flex; flex-direction:column; gap:22px; }
+  .value-item{ display:flex; gap:16px; }
+  .value-item .vnum{ font-family:"Noto Serif TC",serif; font-weight:900; color:var(--seal); font-size:15px; flex:none; width:28px; }
+  .value-item h4{ font-size:15px; margin-bottom:5px; }
+  .value-item p{ font-size:13.5px; color:var(--steel); }
+
+  /* services */
+  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); }
+  @media (max-width:880px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .svc-grid{ grid-template-columns:1fr; } }
+  .svc{ background:var(--paper); padding:32px 28px; }
+  .svc .ic{ width:34px; height:34px; color:var(--seal); margin-bottom:20px; }
+  .svc h4{ font-size:16px; margin-bottom:10px; font-weight:700; }
+  .svc p{ font-size:13.5px; color:var(--steel); }
+
+  /* process */
+  .steps{ display:flex; gap:2px; background:var(--line); }
+  @media (max-width:760px){ .steps{ flex-direction:column; } }
+  .step{ flex:1; background:var(--paper); padding:32px 26px; }
+  .step .snum{ font-family:"Noto Serif TC",serif; font-size:32px; font-weight:900; color:transparent; -webkit-text-stroke:1.4px var(--navy); margin-bottom:16px; }
+  .step h4{ font-size:15px; margin-bottom:10px; }
+  .step p{ font-size:13px; color:var(--steel); }
+
+  /* case study */
+  .case{ background:var(--navy); color:#fff; }
+  .case .kicker .rule{ background:rgba(255,255,255,0.14); }
+  .case .kicker .no{ color:var(--seal-soft); }
+  .case h2.title{ color:#fff; }
+  .case-body{ display:flex; gap:56px; flex-wrap:wrap; }
+  .case-main{ flex:1 1 420px; }
+  .case-main p{ color:rgba(255,255,255,0.72); font-size:15px; margin-bottom:18px; }
+  .case-tag{ display:inline-block; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); padding:6px 14px; font-size:12px; letter-spacing:0.06em; color:rgba(255,255,255,0.75); margin-bottom:22px; }
+  .case-results{ flex:1 1 320px; display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.1); align-self:stretch; }
+  .case-results .cr-head{ background:rgba(255,255,255,0.04); padding:16px 22px; font-size:12px; letter-spacing:0.16em; color:rgba(255,255,255,0.5); }
+  .case-results .r{ background:var(--navy); padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .case-results .r .ic{ width:18px; height:18px; flex:none; color:var(--seal-soft); }
+  .case-results .r .kv{ flex:1; display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
+  .case-results .r .k{ font-size:13.5px; color:rgba(255,255,255,0.6); }
+  .case-results .r .v{ font-family:"Noto Serif TC",serif; font-weight:700; color:var(--seal-soft); font-size:15px; text-align:right; }
+  .case-results .cr-highlight{ background:var(--navy-2); padding:22px; font-size:14px; line-height:1.7; color:#fff; border-left:3px solid var(--seal-soft); }
+
+  /* why us */
+  .why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); }
+  @media (max-width:880px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .why-grid{ grid-template-columns:1fr; } }
+  .why{ background:var(--paper); padding:30px 24px; text-align:left; }
+  .why .ic{ width:30px; height:30px; color:var(--navy); margin-bottom:16px; }
+  .why h4{ font-size:14.5px; margin-bottom:8px; }
+  .why p{ font-size:13px; color:var(--steel); }
+
+  /* CTA */
+  .cta{ background:var(--navy); color:#fff; padding:110px 0; position:relative; overflow:hidden; text-align:center; }
+  .cta .seal-wrap{ margin:0 auto 32px; }
+  .cta h2{ font-size:clamp(26px,3.6vw,38px); margin-bottom:16px; }
+  .cta p{ color:rgba(255,255,255,0.68); max-width:520px; margin:0 auto 40px; }
+  .cta-btn{ display:inline-block; background:var(--seal); color:#fff; text-decoration:none; padding:16px 40px; font-size:15px; letter-spacing:0.04em; font-weight:700; }
+  .cta-btn:hover{ background:var(--seal-soft); }
+  .contact-info{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px 28px; margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.14); font-size:13.5px; color:rgba(255,255,255,0.62); }
+  .contact-info a{ text-decoration:none; color:inherit; }
+  .contact-info a:hover{ color:#fff; }
+  .contact-info span{ display:inline-flex; align-items:center; gap:8px; }
+  .contact-info svg{ width:15px; height:15px; flex:none; opacity:0.8; }
+
+  footer{ padding:32px 0; text-align:center; font-size:12px; color:var(--steel-soft); }
+  .placeholder-note{ background:#fff8e6; border:1px dashed var(--gold); color:#6b5316; font-size:12.5px; padding:10px 16px; margin-bottom:0; }
+</style>
+</head>
+<body>
+
+
+<div class="topnav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#c96a52" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+      仲展行銷流通有限公司
+    </a>
+    <nav>
+      <a href="#about">關於我們</a>
+      <a href="#services">服務項目</a>
+      <a href="#process">顧問流程</a>
+      <a href="#case">實績案例</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+    <a class="cta-mini" href="mailto:info@zhongzhan.com.tw">預約諮詢</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">您參與國軍大宗採購標案 ‧ 全程陪跑的安心夥伴</div>
+      <h1>讓每一份服務建議書，<br>都成為<em>決標</em>的關鍵優勢</h1>
+      <p class="lead">多年經驗專精於陸勤部副供中心大宗雜貨採購案，協助廠商完備投標資格、拆解評選須知、強化食安合規與物流備援，系統化提升決標成功率。</p>
+      <div class="pill-row">
+        <span class="pill">標案資格診斷</span>
+        <span class="pill">服務建議書優化</span>
+        <span class="pill">食安合規輔導</span>
+        <span class="pill">物流備援規劃</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn-primary" href="mailto:info@zhongzhan.com.tw">預約專案診斷</a>
+        <a class="btn-ghost" href="#case">查看實績案例</a>
+      </div>
+    </div>
+    <div class="seal-wrap" aria-hidden="true">
+      <svg class="seal" viewBox="0 0 220 220">
+        <g class="seal-ring">
+          <path id="ringpath" fill="none" d="M 110,20 A 90,90 0 1 1 109.9,20"/>
+          <text font-size="12.5" letter-spacing="3" fill="#c96a52" font-family="Noto Sans TC, sans-serif">
+            <textPath href="#ringpath" startOffset="2%">輔導備標 ‧ 合規強化 ‧ 順利決標 ‧ 取得資格 ‧ </textPath>
+          </text>
+        </g>
+        <circle cx="110" cy="110" r="62" fill="none" stroke="#9c3b2e" stroke-width="2.5" opacity="0.9" transform="rotate(-6 110 110)"/>
+        <circle cx="110" cy="110" r="54" fill="none" stroke="#9c3b2e" stroke-width="1" opacity="0.55" transform="rotate(-6 110 110)"/>
+        <text x="110" y="121" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="900" font-size="32" fill="#9c3b2e" transform="rotate(-6 110 110)">決標</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="statbar">
+  <div class="wrap">
+    <div class="stat-cell"><div class="n">100%</div><div class="l">評選須知逐項拆解</div></div>
+    <div class="stat-cell"><div class="n">4</div><div class="l">階段標準化輔導流程</div></div>
+    <div class="stat-cell"><div class="n">24h</div><div class="l">異常換貨應變 SOP 設計</div></div>
+    <div class="stat-cell"><div class="n">全台</div><div class="l">配送備援網絡規劃能力</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="kicker"><span class="no">關於我們</span><div class="rule"></div></div>
+    <div class="about-grid">
+      <div class="lead-col">
+        <h2 class="title">專注副供中心大宗物資採購案，<br>把複雜規範變成決標優勢</h2>
+        <p>副供中心大宗採購案的附加契約與評選須知往往條款繁複，任一環節缺漏都可能導致失分甚至不合格。我們長期深耕此領域，將多年經驗用於協助廠商將分散的履約實績與技術、品管能力，轉化為具成功決標的服務建議書，最終取得供貨資格。</p>
+      </div>
+      <div class="value-list">
+        <div class="value-item"><span class="vnum">01</span><div><h4>條款導向</h4><p>逐條對應附加契約與評選須知，避免程序性失分。</p></div></div>
+        <div class="value-item"><span class="vnum">02</span><div><h4>實證思維</h4><p>用數據與流程圖表取代空泛描述，提升評委閱讀效率。</p></div></div>
+        <div class="value-item"><span class="vnum">03</span><div><h4>全程專業團隊服務</h4><p>從投標前完善備標作業，到決標後供銷客訴諮詢，專業團隊一條龍服務。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <div class="kicker"><span class="no">服務項目</span><div class="rule"></div></div>
+        <h2 class="title">六大顧問服務</h2>
+        <p class="sub">依各類型採購案週期投標產品規劃，涵蓋資格診斷、建議書撰寫優化、食安合規強化與履約風險管理。</p>
+      </div>
+    </div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      <h4>盤點投標資格診斷及建議</h4>
+      <p>全面盤點投標資格與文件，比對附加契約要求，提出補強建議，排除程序不合格風險。</p>
+    </div>
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l5 5v13H6z"/><path d="M9 11h8M9 15h8M9 7h4"/></svg>
+      <h4>輔導服務建議書撰寫優化</h4>
+      <p>將管理、技術、品質、服務等核心優勢，轉化為高視覺化、易評閱的企劃架構。</p>
+    </div>
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V6l7-3z"/></svg>
+      <h4>食安合規輔導</h4>
+      <p>協助梳理原料來源、CAS／HACCP／ISO22000 等認證，建立主動送驗流程。</p>
+    </div>
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M3 6h3l2 9h9l2-6H8"/></svg>
+      <h4>物流配送備援規劃</h4>
+      <p>建構涵蓋各據點的配送地圖與緊急備援車隊機制，確保契約時限內完成交貨。</p>
+    </div>
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 15s1.2-2 3-2 3 2 3 2M9 9h.01M15 9h.01"/></svg>
+      <h4>供貨後客訴處理諮詢</h4>
+      <p>提供決標後履約期間的客訴應對與處理諮詢，協助妥善化解爭議、維護長期供貨關係。</p>
+    </div>
+    <div class="svc">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l4-4 4 2 8-8"/><path d="M15 5h5v5"/></svg>
+      <h4>履約風險管理</h4>
+      <p>解析違約條款與異常換貨機制，預先設置品保風險控管節點。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="kicker"><span class="no">顧問流程</span><div class="rule"></div></div>
+    <h2 class="title">標準化四階段輔導流程</h2>
+    <p class="sub" style="margin-bottom:36px;">將原本分散的資歷與資源，系統化轉化為高分企劃，逐步推進至順利決標。</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><h4>診斷補強</h4><p>盤點投標資格，比對投標文件合規完整性。</p></div>
+    <div class="step"><div class="snum">2</div><h4>編撰優化</h4><p>輔導撰寫服務建議書，優化各章節內容與呈現方式。</p></div>
+    <div class="step"><div class="snum">3</div><h4>投標複查</h4><p>協助企劃印刷、投標資格文件封裝與投標作業。</p></div>
+    <div class="step"><div class="snum">4</div><h4>履約供貨</h4><p>全台副供站物流配送能力，多年日常供貨配銷及客訴處理經驗，降低履約風險減少後續爭議。</p></div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case" class="case">
+  <div class="wrap">
+    <div class="kicker"><span class="no">實績案例</span><div class="rule"></div></div>
+    <h2 class="title">陸勤部副供中心 大宗物資採購案</h2>
+    <div class="case-body">
+      <div class="case-main">
+        <span class="case-tag">全台副供站國軍採購 ‧ 大宗雜貨供應</span>
+        <p>所服務客戶皆為國軍大宗物資指標供應廠商，協助投標品項涵蓋冷凍加工肉品、調理食品及常溫飲料罐頭、雜貨類。每月累計供貨實績，穩定達千萬以上。</p>
+        <p>輔導客戶拆解評選須知與附加契約條款，協助客戶完善各項流程食安控管機制、提供配送備援與服務建議書內容系統化整合，聚焦評委審查重點，提升決標機率。</p>
+        <p>輔導範圍涵蓋資格文件診斷、服務建議書編排優化、食安管控機制建立，以及投標前文件最終複查。</p>
+        <p>決標後，提供涵蓋全台25副供站的物流配送能力，以多年配送供應副供站經驗，進一步協助客戶建立履約期間的風險管控及客訴處理機制，以持續穩定供貨、降低後續違約科罰風險為首要目標。</p>
+      </div>
+      <div class="case-results">
+        <div class="cr-head">案件摘要</div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l5 5v13H6z"/><path d="M9 11h8M9 15h8M9 7h4"/></svg>
+          <div class="kv"><span class="k">評選須知拆解涵蓋率</span><span class="v">100%</span></div>
+        </div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l4-4 4 2 8-8"/><path d="M15 5h5v5"/></svg>
+          <div class="kv"><span class="k">輔導階段</span><span class="v">診斷補強 → 編撰優化 → 投標複查 → 履約供貨</span></div>
+        </div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V6l7-3z"/></svg>
+          <div class="kv"><span class="k">強化重點</span><span class="v">食安合規 ‧ 物流備援</span></div>
+        </div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M3 6h3l2 9h9l2-6H8"/></svg>
+          <div class="kv"><span class="k">履約後能力</span><span class="v">全台副供站配送</span></div>
+        </div>
+        <div class="cr-highlight">最終順利決標，取得長期供貨資格，並持續穩定履約中。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="wrap">
+    <div class="kicker"><span class="no">為什麼選擇我們</span><div class="rule"></div></div>
+    <h2 class="title">四個理由，選擇仲展行銷流通有限公司</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>
+      <h4>熟悉副供中心審查邏輯</h4>
+      <p>長期研究評選須知與附加契約結構，精準對應審查重點。</p>
+    </div>
+    <div class="why">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg>
+      <h4>數據化企劃呈現</h4>
+      <p>用圖表與流程取代空泛文字，提升評委閱讀與評分效率。</p>
+    </div>
+    <div class="why">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V6l7-3z"/></svg>
+      <h4>合規與風險並重</h4>
+      <p>兼顧食安合規強化與違約風險預防，降低履約後續爭議。</p>
+    </div>
+    <div class="why">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <h4>全程專業團隊服務</h4>
+      <p>從投標前準備到決標後配銷，具多年經驗專業團隊全程一條龍服務。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="seal-wrap" style="width:150px;height:150px;">
+      <svg class="seal" viewBox="0 0 220 220">
+        <g class="seal-ring">
+          <path id="ringpath2" fill="none" d="M 110,20 A 90,90 0 1 1 109.9,20"/>
+          <text font-size="12.5" letter-spacing="3" fill="#9c3b2e" font-family="Noto Sans TC, sans-serif">
+            <textPath href="#ringpath2" startOffset="2%">輔導備標 ‧ 合規強化 ‧ 順利決標 ‧ 取得資格 ‧ </textPath>
+          </text>
+        </g>
+        <circle cx="110" cy="110" r="62" fill="none" stroke="#9c3b2e" stroke-width="2.5" opacity="0.9" transform="rotate(-6 110 110)"/>
+        <circle cx="110" cy="110" r="54" fill="none" stroke="#9c3b2e" stroke-width="1" opacity="0.55" transform="rotate(-6 110 110)"/>
+        <text x="110" y="121" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="900" font-size="32" fill="#9c3b2e" transform="rotate(-6 110 110)">決標</text>
+      </svg>
+    </div>
+    <h2 class="serif">攜手合作 ‧ 邁向決標</h2>
+    <p>國軍大宗物資採購案專業團隊，是協助您完備資格、強化投標作業、順利決標、取得供貨資格的好夥伴。</p>
+    <a class="cta-btn" href="mailto:info@zhongzhan.com.tw">預約專案診斷與輔導諮詢</a>
+    <div class="contact-info">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>320001 桃園市中壢區中正路82號11F</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4.8-3.5-6-6l2-2-3-6z"/></svg><a href="tel:032636600">03-2636600</a></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4.8-3.5-6-6l2-2-3-6z"/></svg><a href="tel:0981038688">0981-038688</a></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg><a href="mailto:info@zhongzhan.com.tw">info@zhongzhan.com.tw</a></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">仲展行銷流通有限公司 ‧ 公部門大宗物資標案輔導 ‧ 內容僅供網站示意使用</div>
+</footer>
+
+</body>
+</html>
